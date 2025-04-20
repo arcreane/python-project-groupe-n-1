@@ -2,7 +2,6 @@ import pygame
 import sys
 import random
 
-# Initialisation
 pygame.init()
 WIDTH, HEIGHT = 800, 600
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -33,7 +32,7 @@ score = 0
 obstacle_speed = 7
 coin_speed = 5
 
-# Police
+
 font = pygame.font.SysFont(None, 48)
 
 def draw_text(text, color, y):
@@ -79,7 +78,7 @@ def temple_run():
             x_pos = random.randint(0, WIDTH - 30)
             coins.append(pygame.Rect(x_pos, -30, 30, 30))
 
-        # Mise à jour des obstacles
+
         for obs in obstacles[:]:
             obs.y += obstacle_speed
             if obs.y > HEIGHT:
@@ -90,7 +89,7 @@ def temple_run():
                 pygame.time.wait(2000)
                 return False
 
-        # Mise à jour des pièces
+
         for coin in coins[:]:
             coin.y += coin_speed
             if coin.y > HEIGHT:
@@ -111,7 +110,7 @@ def temple_run():
             pygame.time.wait(2000)
             return True
 
-        # Dessin
+  
         pygame.draw.rect(SCREEN, GREEN, player)
         for obs in obstacles:
             pygame.draw.rect(SCREEN, RED, obs)
@@ -129,6 +128,5 @@ def temple_run():
 
     return True
 
-# Lancer le jeu
 if __name__ == "__main__":
     temple_run()

@@ -183,5 +183,4 @@ def temple_run():
     return True
 
 
-if __name__ == "__main__":
-    temple_run()
+temple_run()

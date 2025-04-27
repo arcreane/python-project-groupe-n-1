@@ -34,7 +34,7 @@ score = 0
 obstacle_speed = 7
 coin_speed = 5
 
-# Stats du joueur 
+# Stats du joueur
 player_stats = {
     "obstacles_avoided": 0,
     "game_status": "alive",
@@ -60,7 +60,7 @@ def draw_stats(stats):
         label = labels[key]
         value = stats[key]
         if key == "time_taken":
-            value = f"{value:.2f}"
+            value = f"{value:.1f}"
         stat_text = small_font.render(f"{label} {value}", True, WHITE)
         SCREEN.blit(stat_text, (WIDTH // 2 - stat_text.get_width() // 2, y_offset))
         y_offset += 30
@@ -96,9 +96,9 @@ def temple_run():
         # SCREEN.blit(timer_text, (10, 10))
 
         if elapsed_time >= max_time:
-            player_stats["game_status"] = "temps écoulé"
+            player_stats["game_status"] = "en enfer"
             player_stats["time_taken"] = elapsed_time
-            draw_text("Temps écoulé! Game Over.", RED, HEIGHT // 2)
+            draw_text("La mort vous a attrapé !", RED, HEIGHT // 2)
             draw_stats(player_stats)
             pygame.display.flip()
             pygame.time.wait(4000)
@@ -183,5 +183,4 @@ def temple_run():
     return True
 
 
-if __name__ == "__main__":
-    temple_run()
+temple_run()

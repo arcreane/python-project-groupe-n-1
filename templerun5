@@ -7,7 +7,7 @@ import time
 pygame.init()
 WIDTH, HEIGHT = 800, 600
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Temple Escape")
+pygame.display.set_caption("Death run")
 CLOCK = pygame.time.Clock()
 
 # Couleurs
@@ -54,7 +54,7 @@ def draw_stats(stats):
     labels = {
         "obstacles_avoided": "Nombre d'obstacles évités :",
         "game_status": "Statut final :",
-        "time_taken": "Temps écoulé (s) :"
+        "time_taken": "Temps écoulé :"
     }
     for key in ["obstacles_avoided", "game_status", "time_taken"]:
         label = labels[key]

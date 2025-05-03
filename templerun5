@@ -91,9 +91,6 @@ def temple_run():
         elapsed_time = time.time() - start_time
         remaining_time = max(0, int(max_time - elapsed_time))
 
-        # Affichage du timer
-        # timer_text = small_font.render(f"Temps restant : {remaining_time}s", True, WHITE)
-        # SCREEN.blit(timer_text, (10, 10))
 
         if elapsed_time >= max_time:
             player_stats["game_status"] = "en enfer"
